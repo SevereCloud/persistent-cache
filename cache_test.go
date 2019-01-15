@@ -26,14 +26,8 @@ func TestCache(t *testing.T) {
 		t.Error("Getting B found value that shouldn't exist:", b)
 	}
 
-	c, found := tc.Get("c")
-	if found || c != nil {
-		t.Error("Getting C found value that shouldn't exist:", c)
-	}
-
 	tc.Set("a", 1, DefaultExpiration)
 	tc.Set("b", "b", DefaultExpiration)
-	tc.Set("c", 3.5, DefaultExpiration)
 
 	x, found := tc.Get("a")
 	if !found {
@@ -54,16 +48,6 @@ func TestCache(t *testing.T) {
 	} else if b2 := x.(string); b2+"B" != "bB" {
 		t.Error("b2 (which should be b) plus B does not equal bB; value:", b2)
 	}
-
-	x, found = tc.Get("c")
-	if !found {
-		t.Error("c was not found while getting c2")
-	}
-	if x == nil {
-		t.Error("x for c is nil")
-	} else if c2 := x.(float64); c2+1.2 != 4.7 {
-		t.Error("c2 (which should be 3.5) plus 1.2 does not equal 4.7; value:", c2)
-	}
 }
 
 func TestCacheBinLog(t *testing.T) {
@@ -79,14 +63,9 @@ func TestCacheBinLog(t *testing.T) {
 		t.Error("Getting B found value that shouldn't exist:", b)
 	}
 
-	c, found := tc.Get("c")
-	if found || c != nil {
-		t.Error("Getting C found value that shouldn't exist:", c)
-	}
-
 	tc.Set("a", 1, DefaultExpiration)
 	tc.Set("b", "b", DefaultExpiration)
-	tc.Set("c", 3.5, DefaultExpiration)
+	tc.CloseBinLog()
 
 	tcl, _ := Load(DefaultExpiration, 0, "binlog.test")
 
@@ -108,16 +87,6 @@ func TestCacheBinLog(t *testing.T) {
 		t.Error("x for b is nil")
 	} else if b2 := x.(string); b2+"B" != "bB" {
 		t.Error("b2 (which should be b) plus B does not equal bB; value:", b2)
-	}
-
-	x, found = tcl.Get("c")
-	if !found {
-		t.Error("c was not found while getting c2")
-	}
-	if x == nil {
-		t.Error("x for c is nil")
-	} else if c2 := x.(float64); c2+1.2 != 4.7 {
-		t.Error("c2 (which should be 3.5) plus 1.2 does not equal 4.7; value:", c2)
 	}
 }
 
@@ -161,11 +130,11 @@ func TestCacheTimes(t *testing.T) {
 
 func TestNewFrom(t *testing.T) {
 	m := map[string]Item{
-		"a": Item{
+		"a": {
 			Object:     1,
 			Expiration: 0,
 		},
-		"b": Item{
+		"b": {
 			Object:     2,
 			Expiration: 0,
 		},
