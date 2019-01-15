@@ -1,9 +1,9 @@
 # persistent-cache
 
-[![Build Status](https://travis-ci.org/severecloud/persistent-cache.svg?branch=master)](https://travis-ci.org/severecloud/persistent-cache)
+[![Build Status](https://travis-ci.org/SevereCloud/persistent-cache.svg?branch=master)](https://travis-ci.org/SevereCloud/persistent-cache)
 [![Go Report Card](https://goreportcard.com/badge/github.com/severecloud/persistent-cache)](https://goreportcard.com/report/github.com/severecloud/persistent-cache)
 [![Documentation](https://godoc.org/github.com/severecloud/persistent-cache?status.svg)](http://godoc.org/github.com/severecloud/persistent-cache)
-[![Coverage Status](https://coveralls.io/repos/github/severecloud/persistent-cache/badge.svg?branch=master)](https://coveralls.io/github/severecloud/persistent-cache?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/SevereCloud/persistent-cache/badge.svg?branch=master)](https://coveralls.io/github/SevereCloud/persistent-cache?branch=master)
 [![GitHub issues](https://img.shields.io/github/issues/severecloud/persistent-cache.svg)](https://github.com/severecloud/persistent-cache/issues)
 [![license](https://img.shields.io/github/license/severecloud/persistent-cache.svg?maxAge=2592000)](https://github.com/severecloud/persistent-cache/LICENSE)
 
