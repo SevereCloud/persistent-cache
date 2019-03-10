@@ -6,6 +6,7 @@
 [![codecov](https://codecov.io/gh/SevereCloud/persistent-cache/branch/master/graph/badge.svg)](https://codecov.io/gh/SevereCloud/persistent-cache)
 [![GitHub issues](https://img.shields.io/github/issues/severecloud/persistent-cache.svg)](https://github.com/severecloud/persistent-cache/issues)
 [![license](https://img.shields.io/github/license/severecloud/persistent-cache.svg?maxAge=2592000)](https://github.com/severecloud/persistent-cache/LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSevereCloud%2Fpersistent-cache.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSevereCloud%2Fpersistent-cache?ref=badge_shield)
 
 [go-cache](https://github.com/patrickmn/go-cache) is an in-memory key:value 
 store/cache similar to memcached that issuitable for applications running on
@@ -52,3 +53,7 @@ func main() {
 	c.SetDefault("foo", "bar")
 }
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSevereCloud%2Fpersistent-cache.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSevereCloud%2Fpersistent-cache?ref=badge_large)
